@@ -1,0 +1,24 @@
+import time
+import board
+import digitalio
+import usb_hid
+from adafruit_hid.keyboard import Keyboard
+from adafruit_hid.keycode import Keycode
+
+# Set up button on GP14 with internal pull-up resistor
+button = digitalio.DigitalInOut(board.GP14)
+button.direction = digitalio.Direction.INPUT
+button.pull = digitalio.Pull.UP
+
+keyboard = Keyboard(usb_hid.devices)
+is_pressed = False
+
+while True:
+    # Button is False when pressed due to pull-up setup
+    if not button.value and not is_pressed:
+        keyboard.send(Keycode.V)
+        is_pressed = True
+        time.sleep(0.05) # Debounce delay
+    elif button.value and is_pressed:
+        is_pressed = False
+        time.sleep(0.05) # Debounce delay
