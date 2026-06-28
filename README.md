@@ -8,3 +8,5 @@ BTW here are the components you need:
 https://www.amazon.co.uk/Latching-Button-Self-locking-Pre-wired-MKBKLLJY/dp/B0C61WY1JM
 
 And a raspberry pi pico
+
+Here is a video of it working: https://cdn.hackclub.com/019f0db3-b05b-7d69-a209-3ee0ff2b4751/WhatsApp%20Video%202026-06-16%20at%2019.16.42.mp4
